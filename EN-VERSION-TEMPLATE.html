@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Install in 10 Seconds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .icon-wrapper svg {
+            width: 48px;
+            height: 48px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .time-highlight {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .install-button {
+            width: 100%;
+            max-width: 320px;
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 18px 32px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .install-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .install-button:hover::before,
+        .install-button:active::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .install-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .install-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .disclaimer {
+            margin-top: 32px;
+            font-size: 12px;
+            opacity: 0.7;
+            line-height: 1.4;
+            max-width: 280px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 16px;
+            }
+
+            .icon-wrapper {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 20px;
+                border-radius: 20px;
+            }
+
+            .icon-wrapper svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 28px;
+            }
+
+            .time-highlight {
+                font-size: 13px;
+                padding: 6px 14px;
+                margin-bottom: 32px;
+            }
+
+            .install-button {
+                max-width: 100%;
+                padding: 16px 28px;
+                font-size: 16px;
+                border-radius: 14px;
+            }
+
+            .disclaimer {
+                margin-top: 28px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .container {
+                padding: 16px;
+            }
+
+            .icon-wrapper {
+                width: 56px;
+                height: 56px;
+                margin-bottom: 16px;
+            }
+
+            .icon-wrapper svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            h1 {
+                font-size: 22px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .time-highlight {
+                font-size: 12px;
+                padding: 6px 12px;
+                margin-bottom: 24px;
+            }
+
+            .install-button {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+
+            .disclaimer {
+                margin-top: 20px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-wrapper">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+        
+        <h1>Entertainment<br>Center</h1>
+        
+        <p class="subtitle">Experience instant fun with our interactive games</p>
+        
+        <div class="time-highlight">⚡ Install in 10 seconds</div>
+        
+        <a href="https://5y8c.pg77768.com/9556782205/9556782205_main_t2.html?click_clickid=tVg3&tplhx=1" class="install-button">
+            <span class="button-text">Play Now</span>
+        </a>
+        
+        <p class="disclaimer">This page is for game information only. Content for entertainment purposes only.</p>
+    </div>
+</body>
+</html>
+
